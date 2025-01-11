@@ -4,52 +4,54 @@ Author: vrushti patel
 Date:11/1/25
 */
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    float a, b;
+    double a, b, result;
     int menu;
     while (1)
     {
-        menu:
+    menu:
         printf("\n=== Simple Calculator ===\n");
         printf("1. Addition\n");
         printf("2. subtraction\n");
         printf("3. multiplication\n");
         printf("4. Division\n");
-        printf("5. Exit\n\n");
-        
+        printf("5. Modulus\n");
+        printf("6. Exit\n\n");
+
         printf("Enter a choice(1-5):");
         scanf("%d", &menu);
 
-        if (menu == 5)
+        if (menu == 6)
         {
             printf("Exit a program. goodbye!!\n");
             break;
         }
 
-        if (menu > 5 || menu < 1)
+        if (menu > 6 || menu < 1)
         {
             printf("Enter a valid number\n");
             goto menu;
         }
 
         printf("Enter two number:");
-        scanf("%f %f", &a, &b);
+        scanf("%lf %lf", &a, &b);
         printf("\n");
 
         switch (menu)
         {
         case 1:
             printf("You selected addition\n");
-            printf("%.2f + %.2f = %.2f", a, b, a + b);
+            result = a + b;
             break;
         case 2:
             printf("You selected subtraction\n");
-            printf("%.2f - %.2f = %.2f", a, b, a - b);
+            result = a - b;
             break;
         case 3:
             printf("You selected multiplication\n");
-            printf("%.2f * %.2f = %.2f", a, b, a * b);
+            result = a * b;
             break;
         case 4:
             if (b == 0)
@@ -59,9 +61,28 @@ int main()
             else
             {
                 printf("You selected addition\n");
-                printf("%.2f / %.2f = %.2f", a, b, a / b);
+                result = a / b;
             }
             break;
+        case 5:
+            if (b == 0)
+            {
+                printf("number is not divided to 0");
+            }
+            else
+            {
+                printf("You selected modulus\n");
+                result = fmod(a, b);
+            }
+            break;
+        }
+        if (a == (int)a && b == (int)b)
+        {
+            printf("Result:%.f\n", result);
+        }
+        else
+        {
+            printf("Result:%.2f\n", result);
         }
     }
     return 0;
