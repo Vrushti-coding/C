@@ -7,9 +7,12 @@ Date:9/1/25
 int main()
 {
     int a,b,sum=0;
-    printf("Enter Two Integers:");//print in console
-    scanf("%d %d",&a,&b);//input from user
+
+    printf("Enter Two Integers:");
+    scanf("%d %d",&a,&b);
+
     sum=a+b;
+    
     printf("Sum: %d",sum);
     return 0;
 }

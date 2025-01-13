@@ -7,12 +7,15 @@ prime means no not divide
 int main()
 {
     int a, cnt = 0;
+
     printf("Enter a number:");
     scanf("%d", &a);
+
     if (a <= 1)
     {
         printf("%d is not prime no", a);
     }
+
     else
     {
         for (int i = 1; i <= a; i++)
@@ -23,13 +26,14 @@ int main()
             }
         }
     }
-    if (cnt > 2)
+    
+    if (cnt == 2)
     {
-        printf("%d is not prime no", a);
+        printf("%d is prime no", a);
     }
     else
     {
-        printf("%d is prime no", a);
+        printf("%d is not prime no", a);
     }
     return 0;
 }
@@ -44,17 +48,22 @@ Date:12/1/25
 int main()
 {
     int a, b;
+
     printf("Enter a range(1to10):\n");
     scanf("%d %d", &a, &b);
+
     if (a > b)
     {
         printf("Enter a valid range!!!");
         return 1;
     }
+
     printf("Prime number between %d and %d are:\n", a, b);
+
     for (int i = a; i <= b; i++)
     {
         int cnt = 0;
+
         for (int j = 1; j <= i; j++)
         {
             if (i % j == 0)
@@ -62,6 +71,7 @@ int main()
                 cnt++;
             }
         }
+
         if (cnt == 2)
         {
             printf("%d is prime no\n", i);

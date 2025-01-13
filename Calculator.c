@@ -70,18 +70,22 @@ int main()
 
         switch (menu)
         {
+            
         case 1:
             printf("You selected addition\n");
             result = a + b;
             break;
+
         case 2:
             printf("You selected subtraction\n");
             result = a - b;
             break;
+
         case 3:
             printf("You selected multiplication\n");
             result = a * b;
             break;
+
         case 4:
             if (b == 0)
             {
@@ -93,6 +97,7 @@ int main()
                 result = a / b;
             }
             break;
+
         case 5:
             if (b == 0)
             {
@@ -105,23 +110,17 @@ int main()
             }
             break;
         }
+
         if (a == (int)a && b == (int)b)
         {
             printf("Result:%.f\n", result);
-            snprintf(history[history_count++], 100, "%.2f %s %.2f = %.2f", a, (menu == 1 ? "+" : menu == 2 ? "-"
-                                                                                             : menu == 3   ? "*"
-                                                                                             : menu == 4   ? "/"
-                                                                                                           : "%"),
-                     b, result);
+            snprintf(history[history_count++], 100, "%.2f %s %.2f = %.2f", a, (menu == 1 ? "+" : menu == 2 ? "-" : menu == 3   ? "*" : menu == 4   ? "/" : "%"),b, result);
         }
+
         else
         {
             printf("Result:%.2f\n", result);
-            snprintf(history[history_count++], 100, "%.2f %s %.2f = %.2f", a, (menu == 1 ? "+" : menu == 2 ? "-"
-                                                                                             : menu == 3   ? "*"
-                                                                                             : menu == 4   ? "/"
-                                                                                                           : "%"),
-                     b, result);
+            snprintf(history[history_count++], 100, "%.2f %s %.2f = %.2f", a, (menu == 1 ? "+" : menu == 2 ? "-" : menu == 3   ? "*" : menu == 4   ? "/" : "%"),b, result);
         }
     }
     return 0;
